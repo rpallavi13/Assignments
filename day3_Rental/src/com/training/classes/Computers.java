@@ -2,46 +2,19 @@ package com.training.classes;
 
 import com.training.ifaces.Rent;
 
-public class Computers implements Rent {
+public class Computers extends Details implements Rent {
 	
-	private int quantity;
-	private double cost;
-	private int daysOfRent;
+	
 	public Computers(int quantity, double cost, int daysOfRent) {
-		super();
-		this.quantity = quantity;
-		this.cost = cost;
-		this.daysOfRent = daysOfRent;
+		super(quantity, cost, daysOfRent);
+		// TODO Auto-generated constructor stub
 	}
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-	public double getCost() {
-		return cost;
-	}
-	public void setCost(double cost) {
-		this.cost = cost;
-	}
-	public int getDaysOfRent() {
-		return daysOfRent;
-	}
-	public void setDaysOfRent(int daysOfRent) {
-		this.daysOfRent = daysOfRent;
-	}
+
 	@Override
-	public double rentPerDay() {
+	public double getRent() {
 		// TODO Auto-generated method stub
-		Double rent=this.getQuantity()*this.getCost();
+		double rent= this.getQuantity()*this.getCost()*this.getDaysOfRent();
 		return rent;
-	}
-	@Override
-	public double totalRent() {
-		// TODO Auto-generated method stub
-		double totalRent= rentPerDay()*this.getDaysOfRent();
-		return totalRent;
 	}
 	 
 
