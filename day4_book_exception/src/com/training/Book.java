@@ -37,8 +37,9 @@ public void setBookName(String bookName)throws MyCustomException {
 			bookName.length();
 		}
 	catch(NullPointerException e)
-	{
+	{	
 		throw new MyCustomException("- You have not entered a book name",e);
+		
 	}
 }
 public double getPrice() {
@@ -48,13 +49,13 @@ public void setPrice(double price) throws RangeCheckException {
 	try{
 		this.price = price;
 		if(price<=100 || price>=500)
-		{
+		{		
 				throw new RangeCheckException("Price of the book is not between 100 and 500");
 		}
 	}
 	catch(RangeCheckException e)
 	{
-		System.out.println("Price of the book is not between 100 and 500");
+		System.out.println(e);
 	}
 	
 }

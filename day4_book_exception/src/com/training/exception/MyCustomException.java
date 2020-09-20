@@ -2,8 +2,8 @@ package com.training.exception;
 
 public class MyCustomException extends Exception {
 
-	public MyCustomException(String message, Throwable cause) {
-		super(message, cause);
+	public MyCustomException(String message,Throwable cause) {
+		super(message,cause);
 		// TODO Auto-generated constructor stub
 	}
 

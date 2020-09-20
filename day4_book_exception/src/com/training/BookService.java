@@ -6,9 +6,9 @@ public class BookService {
 	Book[] bookArray= new Book[100];
 	public void getOne(	String bookName) throws NoSuchElementException
 	{	
-		if(bookName==null)
-		{
-			throw new NoSuchElementException();
+		if(bookName.equals("abc"))
+		{	
+			throw new NoSuchElementException("No book record found");
 		}
 	}
 	public void add(Book book,int index)

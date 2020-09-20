@@ -1,5 +1,7 @@
 package com.training;
 
+import java.util.NoSuchElementException;
+
 import com.training.exception.MyCustomException;
 import com.training.exception.RangeCheckException;
 
@@ -17,10 +19,11 @@ public class Application {
 		try
 		{
 			Book book1=new Book(11,"Paula Morris","Ruined",600.00);
-			book1.setPrice(600);
+			book1.setPrice(400);
 			book1.setBookName(null);
 			BookService bookService=new BookService();
 			bookService.add(book1,1);
+			bookService.getOne("abc");
 			Book[] array=new Book[100];
 			array=bookService.getAll();
 			Application application=new Application();
@@ -29,11 +32,16 @@ public class Application {
 		}
 		catch(RangeCheckException e)
 		{
-			System.out.println("exception");
+			System.out.println("exception ");
 		}
 		catch(MyCustomException e)
 		{
-			System.out.println(e.getMessage());
+			System.out.println(e);
+		}
+		catch(NoSuchElementException e)
+		{
+			System.out.println(e);
+			e.printStackTrace();
 		}
 		catch(Exception e)
 		{
